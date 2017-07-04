@@ -1,0 +1,29 @@
+{
+  "action_menu": [
+    {
+      "name": "chat",
+      "templateUrl": "chat.html",
+      "width": 3,
+      "icon": {
+        "type": "chat"
+      }
+    },
+    {
+      "name": "notifications",
+      "templateUrl": "notifications.html",
+      "width": 3,
+      "icon": {
+        "type": "notifications"
+      }
+    },
+    {
+      "name": "profile",
+      "templateUrl": "profile.html",
+      "width": 2,
+      "icon": {
+        "type": "person"
+      },
+      "state": "profile"
+    }
+  ]
+}

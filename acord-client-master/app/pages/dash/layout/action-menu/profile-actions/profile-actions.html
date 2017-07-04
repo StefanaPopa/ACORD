@@ -1,0 +1,22 @@
+<div id="action_menu_profile" layout="column" layout-align="start center" flex>
+
+    <md-menu-item
+            ng-repeat="action in actionMenuProfile.actions"
+            layout="row"
+            flex="20">
+
+        <md-button ui-sref="{{action.state}}" layout-align="start stretch">
+
+            <ng-md-icon
+                    icon="{{action.icon.type}}"
+                    size="18"
+                    style="fill: black"
+            />
+
+            <span class="md-subhead">{{action.name}}</span>
+
+        </md-button>
+
+    </md-menu-item>
+
+</div>

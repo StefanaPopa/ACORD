@@ -1,0 +1,44 @@
+<div id="next_event"
+     ng-click="vm.show($event, vm.next_event)"
+     layout="column" layout-align="center center" flex>
+
+    <!--TODO: create event directive in dialog view-->
+
+    <!--event name-->
+    <div layout="row" layout-align="center center" flex="30">
+        <p class="md-subhead">
+            <strong>{{vm.next_event.name}}</strong>
+        </p>
+    </div>
+
+    <!--event location-->
+    <div layout="row" flex="15">
+        <ng-md-icon icon="location_on" style="fill: red" size="16" layout="column" flex="15"
+                    layout-align="top center"></ng-md-icon>
+
+        <p class="md-caption" layout="column" flex="85">
+            {{vm.next_event.location}}
+        </p>
+    </div>
+
+    <!--event time-->
+    <div layout="row" flex="15">
+        <ng-md-icon icon="access_time" style="fill: black" size="16" layout="column" flex="15"
+                    layout-align="top center"></ng-md-icon>
+
+        <p class="md-caption" layout="column" flex="85">
+            {{vm.next_event.time | amDateFormat:"ddd, DD MMM YY, h:mm a"}}
+        </p>
+    </div>
+
+    <!--event countdown-->
+    <div layout="row" flex="30">
+        <p class="md-subhead md-display4" layout="column" layout-align="center center" flex>
+            <!--TODO: provide end-time from event object-->
+            <timer end-time="1482628000000">
+                <strong>{{days}}d : {{hours}}h : {{minutes}}m : {{seconds}}s</strong>
+            </timer>
+        </p>
+    </div>
+
+</div>

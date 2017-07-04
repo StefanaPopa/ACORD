@@ -1,0 +1,78 @@
+{
+  "top_rated": {
+    "name": "Top Rated",
+    "count": 9,
+    "debaters": [
+      {
+        "name": "Ana-Maria",
+        "score": 73.2
+      },
+      {
+        "name": "Ion Ion",
+        "score": 73.1
+      },
+      {
+        "name": "Gheorghe V",
+        "score": 72.9
+      },
+      {
+        "name": "Stefana",
+        "score": 72.7
+      },
+      {
+        "name": "Roxana",
+        "score": 72.5
+      },
+      {
+        "name": "Popescu",
+        "score": 72.3
+      },
+      {
+        "name": "Mihai",
+        "score": 71.1
+      },
+      {
+        "name": "Alin",
+        "score": 69.2
+      }
+    ]
+  },
+  "top_contributors": {
+    "name": "Top Contributors",
+    "count": 9,
+    "debaters": [
+      {
+        "name": "Debater A",
+        "score": 732
+      },
+      {
+        "name": "Debater B",
+        "score": 731
+      },
+      {
+        "name": "Debater C",
+        "score": 729
+      },
+      {
+        "name": "Debater D",
+        "score": 727
+      },
+      {
+        "name": "Debater E",
+        "score": 725
+      },
+      {
+        "name": "Debater F",
+        "score": 723
+      },
+      {
+        "name": "Debater G",
+        "score": 711
+      },
+      {
+        "name": "Debater H",
+        "score": 692
+      }
+    ]
+  }
+}

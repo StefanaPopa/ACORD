@@ -1,0 +1,31 @@
+#home {
+  width: 100%;
+  height: 100%;
+  padding: 5px; }
+
+#home > article {
+  margin: 8px 40px 8px 0 !important;
+  background-color: white !important; }
+
+#side-notes {
+  overflow: auto;
+  min-width: 200px;
+  max-width: 250px; }
+
+#side-notes .next-event-wrapper,
+#side-notes .ranking-wrapper {
+  padding: 5px; }
+
+#side-notes .next-event-wrapper {
+  min-height: 150px;
+  padding: 5px 20px; }
+
+#side-notes .ranking-wrapper {
+  min-height: 250px; }
+
+#articleFilter {
+  font-weight: 300;
+  font-size: 80%;
+  margin-right: 48px; }
+
+/*# sourceMappingURL=home.css.map */

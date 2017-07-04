@@ -1,0 +1,32 @@
+<div id="home" layout="column"
+     layout-alig="start center" layout-margin layout-fill>
+
+    <md-toolbar class="md-tall transparent md-hue-3"
+                layout="row" layout-align="start center">
+
+        <span class="md-display-1 page-title">
+            Articles
+        </span>
+
+        <div flex></div>
+
+        <md-input-container id="articleFilter">
+
+            <label class="md-subhead weight-300">
+                Category
+            </label>
+
+            <md-select ng-model="vm.filterCategory"
+                       ng-disabled="true">
+
+                <md-option>None</md-option>
+            </md-select>
+        </md-input-container>
+    </md-toolbar>
+
+    <md-content class="transparent" layout="row" layout-align="center start"
+                layout-wrap layout-margin flex>
+        <article ng-repeat="article in vm.articles"
+                 art="{{article}}"></article>
+    </md-content>
+</div>

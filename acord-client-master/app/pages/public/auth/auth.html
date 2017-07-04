@@ -1,0 +1,27 @@
+<div id="auth" md-whiteframe="6"
+     layout="column" layout-align="space around">
+
+    <md-toolbar class="md-primary" md-whiteframe="2"
+                layout="row" layout-align="center center">
+        <span class="md-headline weight-300">LOGIN</span>
+    </md-toolbar>
+
+    <md-content class="transparent"
+                layout="column" layout-align="center center" layout-fill flex>
+
+        <md-input-container>
+            <label>Username</label>
+            <input ng-model="vm.username" type="text">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Password</label>
+            <input ng-model="vm.password" type="password">
+        </md-input-container>
+
+        <md-button class="md-raised"
+                   ng-click="vm.auth()">
+            Submit
+        </md-button>
+    </md-content>
+</div>

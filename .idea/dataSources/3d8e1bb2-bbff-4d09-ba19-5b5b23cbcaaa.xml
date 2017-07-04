@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="acord">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="acord">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="innodb"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="tmp"/>
+    <table id="9" parent="2" name="activity"/>
+    <table id="10" parent="2" name="answers"/>
+    <table id="11" parent="2" name="article_tags"/>
+    <table id="12" parent="2" name="articles"/>
+    <table id="13" parent="2" name="debates"/>
+    <table id="14" parent="2" name="event_participants"/>
+    <table id="15" parent="2" name="events"/>
+    <table id="16" parent="2" name="feedback"/>
+    <table id="17" parent="2" name="groups"/>
+    <table id="18" parent="2" name="lessons"/>
+    <table id="19" parent="2" name="questions"/>
+    <table id="20" parent="2" name="roles"/>
+    <table id="21" parent="2" name="tags"/>
+    <table id="22" parent="2" name="user_groups"/>
+    <table id="23" parent="2" name="users"/>
+    <table id="24" parent="2" name="users_experience"/>
+    <column id="25" parent="9" name="activity_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="9" name="type">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="9" name="author_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="article_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="29" parent="9" name="FK95be91wyfenl5bnxh40mj7wk4">
+      <ColNames>article_id</ColNames>
+    </index>
+    <index id="30" parent="9" name="FKenkqf7j2ybbur2vngd3u1l8ao">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="31" parent="9" name="PRIMARY">
+      <ColNames>activity_id
+type</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="9" name="FKenkqf7j2ybbur2vngd3u1l8ao">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="33" parent="9" name="FK95be91wyfenl5bnxh40mj7wk4">
+      <ColNames>article_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>articles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="34" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="10" name="text_answer">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="value_of_truth">
+      <Position>3</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="10" name="question_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="10" name="FK3erw1a3t0r78st8ty27x6v3g1">
+      <ColNames>question_id</ColNames>
+    </index>
+    <key id="39" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="40" parent="10" name="FK3erw1a3t0r78st8ty27x6v3g1">
+      <ColNames>question_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>questions</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="41" parent="11" name="article_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="11" name="tag_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="11" name="FKeoil73g36agokjw6vuklqgli3">
+      <ColNames>article_id</ColNames>
+    </index>
+    <index id="44" parent="11" name="FKr17guaxramkeyxq0f1xn3bxbw">
+      <ColNames>tag_id</ColNames>
+    </index>
+    <foreign-key id="45" parent="11" name="FKeoil73g36agokjw6vuklqgli3">
+      <ColNames>article_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>articles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="46" parent="11" name="FKr17guaxramkeyxq0f1xn3bxbw">
+      <ColNames>tag_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>tags</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="12" name="category">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="12" name="content">
+      <Position>3</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="12" name="creation_date">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="51" parent="12" name="like_number">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="12" name="privacy">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="12" name="title">
+      <Position>7</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="12" name="author_id">
+      <Position>8</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="12" name="FKe02fs2ut6qqoabfhj325wcjul">
+      <ColNames>author_id</ColNames>
+    </index>
+    <index id="56" parent="12" name="UK_jtpbwa5pnit13o8xxo64f7o18">
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="58" parent="12" name="UK_jtpbwa5pnit13o8xxo64f7o18">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>UK_jtpbwa5pnit13o8xxo64f7o18</UnderlyingIndexName>
+    </key>
+    <foreign-key id="59" parent="12" name="FKe02fs2ut6qqoabfhj325wcjul">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="60" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="13" name="date">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="62" parent="13" name="motion">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="13" name="raiting">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="13" name="author_id">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="13" name="author">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="66" parent="13" name="FKqojfxj0ih2gqjpqti9olqhq9h">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="67" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="68" parent="13" name="FKqojfxj0ih2gqjpqti9olqhq9h">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="69" parent="14" name="activity_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="14" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="71" parent="14" name="FKko8ptqf2gxwl182v7aro6bsw4">
+      <ColNames>activity_id</ColNames>
+    </index>
+    <index id="72" parent="14" name="FKre6m0d4mgt4351tytlkac9jvf">
+      <ColNames>user_id</ColNames>
+    </index>
+    <foreign-key id="73" parent="14" name="FKko8ptqf2gxwl182v7aro6bsw4">
+      <ColNames>activity_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>events</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="74" parent="14" name="FKre6m0d4mgt4351tytlkac9jvf">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="75" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="15" name="end_date">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="77" parent="15" name="event_type">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="15" name="name">
+      <Position>4</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="15" name="start_date">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="80" parent="15" name="author_id">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="15" name="article_id">
+      <Position>7</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="82" parent="15" name="FK5sy1tpolohl19bus61eeftbmt">
+      <ColNames>article_id</ColNames>
+    </index>
+    <index id="83" parent="15" name="FK7gaujeodsxymr1fs9h0uy4wtq">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="84" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="85" parent="15" name="FK7gaujeodsxymr1fs9h0uy4wtq">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="86" parent="15" name="FK5sy1tpolohl19bus61eeftbmt">
+      <ColNames>article_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>articles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="87" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="88" parent="16" name="feedback">
+      <Position>2</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="16" name="role_number">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="90" parent="16" name="score">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="91" parent="16" name="debate_id">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="16" name="receiver_id">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="93" parent="16" name="FKmdpr89r76igdhl70muswj2mgr">
+      <ColNames>debate_id</ColNames>
+    </index>
+    <index id="94" parent="16" name="FKrbqqnhykfpmn7jhej348hlluw">
+      <ColNames>receiver_id</ColNames>
+    </index>
+    <key id="95" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="16" name="FKmdpr89r76igdhl70muswj2mgr">
+      <ColNames>debate_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>debates</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="97" parent="16" name="FKrbqqnhykfpmn7jhej348hlluw">
+      <ColNames>receiver_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="98" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="99" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="100" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="101" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="102" parent="18" name="category">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="18" name="content">
+      <Position>3</Position>
+      <DataType>varchar(20000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="18" name="creation_date">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="105" parent="18" name="title">
+      <Position>5</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="18" name="author_id">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="107" parent="18" name="FKoroeay1bd9shv3nxh593qul76">
+      <ColNames>author_id</ColNames>
+    </index>
+    <index id="108" parent="18" name="UK_m1n9bm6qxgharday5nuo5ponj">
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="109" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="110" parent="18" name="UK_m1n9bm6qxgharday5nuo5ponj">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>UK_m1n9bm6qxgharday5nuo5ponj</UnderlyingIndexName>
+    </key>
+    <foreign-key id="111" parent="18" name="FKoroeay1bd9shv3nxh593qul76">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="112" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="113" parent="19" name="question_text">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="114" parent="19" name="score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="19" name="lesson_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="116" parent="19" name="FKmoaj9c9k8ncsywujtcaujs6rt">
+      <ColNames>lesson_id</ColNames>
+    </index>
+    <key id="117" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="118" parent="19" name="FKmoaj9c9k8ncsywujtcaujs6rt">
+      <ColNames>lesson_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>lessons</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="119" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="120" parent="20" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="121" parent="20" name="UK_ofx66keruapi6vyqpv6f2or37">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="122" parent="20" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="123" parent="20" name="UK_ofx66keruapi6vyqpv6f2or37">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UK_ofx66keruapi6vyqpv6f2or37</UnderlyingIndexName>
+    </key>
+    <column id="124" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="125" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="126" parent="21" name="UK_t48xdq560gs3gap9g7jg36kgc">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="127" parent="21" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="128" parent="21" name="UK_t48xdq560gs3gap9g7jg36kgc">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UK_t48xdq560gs3gap9g7jg36kgc</UnderlyingIndexName>
+    </key>
+    <column id="129" parent="22" name="group_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="22" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="131" parent="22" name="FKd37bs5u9hvbwljup24b2hin2b">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="132" parent="22" name="FKmrgahbb4w32n9wkjqbipttc87">
+      <ColNames>group_id</ColNames>
+    </index>
+    <foreign-key id="133" parent="22" name="FKmrgahbb4w32n9wkjqbipttc87">
+      <ColNames>group_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>groups</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="134" parent="22" name="FKd37bs5u9hvbwljup24b2hin2b">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="135" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="136" parent="23" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="137" parent="23" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="23" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="23" name="rating">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="140" parent="23" name="username">
+      <Position>6</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="141" parent="23" name="role_id">
+      <Position>7</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="142" parent="23" name="FKp56c1712k691lhsyewcssf40f">
+      <ColNames>role_id</ColNames>
+    </index>
+    <index id="143" parent="23" name="UK_r43af9ap4edm43mmtq01oddj6">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="144" parent="23" name="username_index">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="145" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="146" parent="23" name="UK_r43af9ap4edm43mmtq01oddj6">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>UK_r43af9ap4edm43mmtq01oddj6</UnderlyingIndexName>
+    </key>
+    <key id="147" parent="23" name="username_index">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username_index</UnderlyingIndexName>
+    </key>
+    <foreign-key id="148" parent="23" name="FKp56c1712k691lhsyewcssf40f">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>roles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="149" parent="24" name="type">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="150" parent="24" name="experience_points">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="151" parent="24" name="author_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="152" parent="24" name="FKcf7xabek9ypbslt0r5dmvrgm4">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="153" parent="24" name="PRIMARY">
+      <ColNames>type
+author_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="154" parent="24" name="FKcf7xabek9ypbslt0r5dmvrgm4">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>acord</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

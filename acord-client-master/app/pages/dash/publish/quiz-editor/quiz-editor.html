@@ -1,0 +1,53 @@
+<div id="quizEditor"
+     layout="row" layout-align="start start" layout-wrap>
+
+    <md-toolbar class="transparent md-medium-tall"
+                layout="row" layout-align="start center" layout-padding>
+        <span class="weight-300 md-headline">Quiz</span>
+        <span flex></span>
+        <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary"
+                       ng-click="vm.addQuestion()">
+                Add Question
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <div ng-repeat="question in vm.quiz"
+         layout="column" layout-align="start center" layout-margin>
+
+        <md-input-container md-no-float layout="row" layout-fill>
+
+            <input type="text"
+                   ng-model="question.questionText"
+                   placeholder="Statement {{::($index + 1)}}">
+
+            <ng-md-icon icon="clear" size="22" style="fill: gray"
+                        ng-click="vm.deleteQuestion($index)"
+                        layout="row" layout-align="center center"></ng-md-icon>
+
+        </md-input-container>
+
+        <div ng-repeat="answer in question.answers" layout="row">
+
+            <ng-md-icon icon="clear" size="22" style="fill: gray"
+                        ng-click="vm.deleteAnswer($index, $parent.$index)"
+                        layout="row" layout-align="center center"></ng-md-icon>
+
+            <md-input-container md-no-float>
+                <input type="text" ng-model="answer.textAnswer"
+                       placeholder="Answer {{::($index + 1)}}">
+            </md-input-container>
+
+            <md-checkbox ng-model="answer.valueOfTruth">
+                <span ng-if="answer.valueOfTruth">True</span>
+                <span ng-if="!answer.valueOfTruth">False</span>
+            </md-checkbox>
+        </div>
+
+        <md-button class="md-accent md-raised"
+                   ng-click="vm.addAnswer(question)">
+            Add Answer
+        </md-button>
+    </div>
+</div>

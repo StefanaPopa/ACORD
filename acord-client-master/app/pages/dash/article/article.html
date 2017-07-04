@@ -1,0 +1,121 @@
+<!--Small article-->
+<div class="article" md-whiteframe="2"
+     ng-if="vm.type === 'sm'"
+     layout="column" layout-align="start center">
+
+    <md-toolbar class="mini-toolbar" md-whiteframe="2"
+                ng-click="vm.openArticle()"
+                layout="row" layout-align="end center" layout-padding>
+
+        <span class="md-subhead">
+            {{vm.article.category || 'Category'}}
+        </span>
+
+        <span flex></span>
+
+        <div layout="row" layout-align="center center">
+
+            <ng-md-icon icon="date_range" size="22" style="fill: white"
+                        layout="row" layout-align="center center">
+            </ng-md-icon>
+
+            <span class="md-subhead">
+                &nbsp;{{ vm.article.creationDate | amDateFormat:'DD MMM YY, hh:mm'}}
+            </span>
+        </div>
+    </md-toolbar>
+
+    <md-content class="article-toolbar md-accent md-hue-1"
+                layout="column" layout-fill flex>
+
+        <div layout="row" flex>
+
+            <div layout="column" layout-padding>
+
+                <span class="md-title article-title" md-truncate layout-row flex>
+                    {{vm.article.title}}
+                </span>
+
+                <span class="md-subhead article-author">
+                    <!--by {{vm.article.author}}-->
+                    by Stefana Popa
+                </span>
+            </div>
+
+            <!--<div class="article-author-avatar md-avatar"-->
+                 <!--layout="row" layout-align="center center">-->
+                <!--<ng-md-icon icon="person" size="50" style="fill: gray"></ng-md-icon>-->
+            <!--</div>-->
+        </div>
+
+        <div class="tags-toolbar"
+             layout="row" layout-align="end center" layout-padding flex="33">
+
+            <span class="article-tag md-subhead"
+                  ng-repeat="tag in vm.article.tags">
+                {{tag.name}}
+            </span>
+        </div>
+    </md-content>
+</div>
+
+<!--Large Article-->
+<div class="article-lg"
+     ng-if="vm.type === 'lg'"
+     layout="column">
+
+    <div class="article-lg-details"
+         layout="row" layout-align="start center" layout-margin>
+
+        <md-button class="md-icon-button md-primary md-raised"
+                   ui-sref="quiz({lessonId: vm.article.id})"
+                   layout="column" layout-align="center center">
+
+            <ng-md-icon icon="question_answer" size="34" style="fill: white"
+                        layout="row" layout-align="center center">
+            </ng-md-icon>
+        </md-button>
+
+        <span class="md-title weight-300">
+            {{vm.article.category || 'Category'}}
+        </span>
+
+        <span flex></span>
+
+        <div layout="row" layout-align="center center">
+
+            <ng-md-icon icon="date_range" size="22"
+                        layout="row" layout-align="center center">
+            </ng-md-icon>
+
+            <span class="md-title weight-300">
+                &nbsp;{{ vm.article.creationDate | amDateFormat:'DD MMM YY, hh:mm'}}
+            </span>
+        </div>
+    </div>
+
+    <div layout="column" layout-padding>
+
+        <span class="md-display-2 article-title" layout-row flex>
+            {{vm.article.title}}
+        </span>
+
+        <span class="weight-300 md-title article-author">
+            <!--by {{vm.article.author}}-->
+            by Stefana Popa
+        </span>
+    </div>
+
+    <md-content class="transparent md-padding"
+                ng-bind-html="vm.article.content" flex>
+    </md-content>
+
+    <div class="tags-toolbar"
+         layout="row" layout-align="end center" layout-padding>
+
+            <span class="article-tag md-title weight-300"
+                  ng-repeat="tag in vm.article.tags">
+                {{tag.name}}
+            </span>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "actions": [
+    {
+      "name": "Profile",
+      "state": ".profile",
+      "icon": {
+        "type": "person"
+      }
+    },
+    {
+      "name": "Events",
+      "state": ".events.my-events",
+      "icon": {
+        "type": "date_range"
+      }
+    },
+    {
+      "name": "Feedbacks",
+      "state": ".feedback.debater",
+      "icon": {
+        "type": "feedback"
+      }
+    },
+    {
+      "name": "Settings",
+      "state": ".home",
+      "icon": {
+        "type": "settings"
+      }
+    },
+    {
+      "name": "Logout",
+      "state": "public",
+      "icon": {
+        "type": "logout"
+      }
+    }
+  ]
+}

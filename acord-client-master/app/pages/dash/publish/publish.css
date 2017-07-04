@@ -1,0 +1,47 @@
+#publish {
+  width: 100%;
+  height: 100%;
+  padding: 8px 30px; }
+
+#publish md-select {
+  font-size: 110%;
+  height: 45px; }
+
+#publish > div > span:first-child {
+  color: inherit !important;
+  margin: 40px 0; }
+
+#publish md-chip {
+  margin: 8px 8px 0 0; }
+
+#publish md-chip md-icon {
+  min-width: 16px;
+  min-height: 16px; }
+
+#_md-chips-wrapper-11 {
+  margin: 0 8px 16px 8px;
+  flex-direction: row !important; }
+
+#publish .article-form,
+#publish editor,
+#publish quiz-editor,
+#publish md-chips {
+  width: 100%; }
+
+#publish .article-title {
+  font-size: 120%;
+  height: 100%; }
+
+#publish .article-form {
+  min-height: 76px; }
+
+#publish .article-tags {
+  min-height: 50px; }
+
+#publish editor {
+  height: auto; }
+
+#publish md-chips {
+  padding: 0 8px; }
+
+/*# sourceMappingURL=publish.css.map */

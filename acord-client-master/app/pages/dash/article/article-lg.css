@@ -1,0 +1,12 @@
+.article-lg {
+  padding: 5% 5% 2% 0;
+  height: 100%; }
+
+.article-lg .tags-toolbar > span {
+  margin: 4px 10px 4px 2px;
+  background-color: #EDE7F6;
+  padding: 4px 16px;
+  border-radius: 16px;
+  color: #283593; }
+
+/*# sourceMappingURL=article-lg.css.map */

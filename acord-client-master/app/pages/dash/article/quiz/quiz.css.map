@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,wCAA0C;EACxC,MAAM,EAAE,YAAY",
+"sources": ["quiz.sass"],
+"names": [],
+"file": "quiz.css"
+}

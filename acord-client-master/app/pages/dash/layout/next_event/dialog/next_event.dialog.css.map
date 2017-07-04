@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "mappings": "AAAA,uBAAuB;EACrB,SAAS,EAAE,GAAG;;AAEhB,eAAe;EACb,OAAO,EAAE,GAAG;;AAEd,uBAAuB;EACrB,KAAK,EAAE,IAAI",
+  "sources": [
+    "next_event.dialog.sass"
+  ],
+  "names": [],
+  "file": "next_event.dialog.css"
+}

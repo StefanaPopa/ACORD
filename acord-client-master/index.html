@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <!--<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>-->
+    <title ng-cloak ng-bind="$state.current.data.pageTitle + ' - ACORD'">ACORD</title>
+
+    <!--vendors-->
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="node_modules/angular-motion/dist/angular-motion.min.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"/>
+
+    <!--app-->
+    <link rel="stylesheet" href="dist/acord_app.min.css"/>
+</head>
+<body layout="column">
+
+    <div ui-view="" layout-fill></div>
+
+    <!--vendors-->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="node_modules/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-tinymce/dist/tinymce.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="node_modules/angular-moment/angular-moment.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-timer/dist/angular-timer.min.js"></script>
+    <script type="text/javascript" src="node_modules/humanize-duration/humanize-duration.js"></script>
+    <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+
+    <!--modules-->
+    <script type="text/javascript" src="app/app.module.js"></script>
+
+    <!--globals:data-->
+    <script type="text/javascript" src="app/globals/globals.module.js"></script>
+    <script type="text/javascript" src="app/globals/data/globals.constant.headers.js"></script>
+    <script type="text/javascript" src="app/globals/data/globals.constant.keys.js"></script>
+    <script type="text/javascript" src="app/globals/data/globals.constant.url-aliases.js"></script>
+    <script type="text/javascript" src="app/globals/data/globals.constant.urls.js"></script>
+    <script type="text/javascript" src="app/globals/data/globals.constant.views.js"></script>
+    <script type="text/javascript" src="app/globals/data/resources/globals.constant.article.js"></script>
+    <script type="text/javascript" src="app/globals/data/resources/globals.constant.resources.js"></script>
+
+    <!--globals:service-->
+    <script type="text/javascript" src="app/globals/services/globals.service.http-interceptor.js"></script>
+    <script type="text/javascript" src="app/globals/services/globals.service.loader.js"></script>
+    <script type="text/javascript" src="app/globals/services/globals.service.persist.js"></script>
+    <script type="text/javascript" src="app/globals/services/globals.service.request.js"></script>
+    <script type="text/javascript" src="app/globals/services/globals.service.utils.js"></script>
+    <script type="text/javascript" src="app/globals/services/globals.service.builder.js"></script>
+
+    <!--configs-->
+    <script type="text/javascript" src="app/configs/app.config.exceptions.js"></script>
+    <script type="text/javascript" src="app/configs/app.config.http-interceptor.js"></script>
+    <script type="text/javascript" src="app/configs/app.config.local-storage.js"></script>
+    <script type="text/javascript" src="app/configs/app.config.themes.js"></script>
+    <script type="text/javascript" src="app/configs/app.config.url-aliases.js"></script>
+
+    <!--runs-->
+    <script type="text/javascript" src="app/runs/app.run.auth.js"></script>
+    <script type="text/javascript" src="app/runs/app.run.root.js"></script>
+
+    <!--widgets-->
+    <script type="text/javascript" src="app/widgets/widgets.module.js"></script>
+    <script type="text/javascript" src="app/widgets/under_construction/under-construction.component.js"></script>
+
+    <!--pages-->
+    <script type="text/javascript" src="app/pages/dash/dash.module.js"></script>
+
+    <!--pages:article-->
+    <script type="text/javascript" src="app/pages/dash/article/article.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/article/article.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/article/article.component.js"></script>
+
+    <!--pages:article:quiz-->
+    <script type="text/javascript" src="app/pages/dash/article/quiz/quiz.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/article/quiz/quiz.component.js"></script>
+
+    <!--pages:dash:home-->
+    <script type="text/javascript" src="app/pages/dash/home/home.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/home/home.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/home/home.component.js"></script>
+
+    <!--pages:dash:layout-->
+    <script type="text/javascript" src="app/pages/dash/layout/dash-layout.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/dash-layout.component.js"></script>
+
+    <!--pages:dash:learn-->
+    <script type="text/javascript" src="app/pages/dash/learn/learn.config.states.js"></script>
+    <script type="text/javascript" src="app/pages/dash/learn/learn.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/learn/learn.component.js"></script>
+
+    <!--pages:dash:action-menu-->
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/action-menu.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/action-menu.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/action-menu.component.js"></script>
+
+    <!--pages:dash:profile-actions-->
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/profile-actions/profile-actions.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/profile-actions/profile-actions.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/action-menu/profile-actions/profile-actions.component.js"></script>
+
+    <!--pages:dash:main-menu-->
+    <script type="text/javascript" src="app/pages/dash/layout/main-menu/main-menu.constant.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/main-menu/main-menu.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/main-menu/main-menu.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/main-menu/main-menu.component.js"></script>
+
+    <!--pages:dash:next-event-->
+    <script type="text/javascript" src="app/pages/dash/layout/next_event/next_event.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/next_event/next_event.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/next_event/next_event.component.js"></script>
+
+    <!--pages:dash:next-event-dialog-->
+    <script type="text/javascript" src="app/pages/dash/layout/next_event/dialog/next_event_dialog.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/next_event/dialog/next_event_dialog.component.js"></script>
+
+    <!--pages:dash:ranking-->
+    <script type="text/javascript" src="app/pages/dash/layout/ranking/ranking.constant.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/ranking/ranking.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/ranking/ranking.filter.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/ranking/ranking.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/ranking/ranking.component.js"></script>
+
+    <!--pages:dash:side-menu-->
+    <script type="text/javascript" src="app/pages/dash/layout/side-menu/side_menu.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/side-menu/side_menu.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/layout/side-menu/side-menu.component.js"></script>
+
+    <!--pages:dash:side-menu-->
+    <script type="text/javascript" src="app/pages/dash/publish/publish.service.js"></script>
+    <script type="text/javascript" src="app/pages/dash/publish/publish.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/publish/publish.component.js"></script>
+
+    <!--pages:dash:editor-->
+    <script type="text/javascript" src="app/pages/dash/publish/editor/editor.constant.js"></script>
+    <script type="text/javascript" src="app/pages/dash/publish/editor/editor.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/publish/editor/editor.component.js"></script>
+
+    <!--pages:dash:quiz-editor-->
+    <script type="text/javascript" src="app/pages/dash/publish/quiz-editor/quiz-editor.controller.js"></script>
+    <script type="text/javascript" src="app/pages/dash/publish/quiz-editor/quiz-editor.component.js"></script>
+
+    <!--pages:public-->
+    <script type="text/javascript" src="app/pages/public/public.module.js"></script>
+    <script type="text/javascript" src="app/pages/public/public.controller.js"></script>
+    <script type="text/javascript" src="app/pages/public/public.component.js"></script>
+
+    <!--pages:public:auth-->
+    <script type="text/javascript" src="app/pages/public/auth/auth.controller.js"></script>
+    <script type="text/javascript" src="app/pages/public/auth/auth.component.js"></script>
+
+    <!--config states-->
+    <script type="text/javascript" src="app/pages/pages.config.state.js"></script>
+    <script type="text/javascript" src="app/pages/dash/dash.config.states.js"></script>
+    <script type="text/javascript" src="app/pages/public/public.config.states.js"></script>
+</body>
+</html>

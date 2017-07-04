@@ -1,0 +1,18 @@
+<div id="main_menu" ng-cloak
+     layout="row" layout-align="start center" layout-fill>
+
+    <md-button class="menuItem"
+               ng-repeat="menuItem in vm.main_menu"
+               ui-sref="{{menuItem.state}}"
+               ng-class="{'md-raised active-state': vm.isStateActive(menuItem.state)}"
+               layout="row" layout-align="center center"
+               aria-label="Menu Item $index">
+
+        <ng-md-icon icon="{{menuItem.icon.type}}"
+                    size="{{menuItem.icon.size}}"
+                    style="fill: white"
+                    layout="row" layout-align="start center"/>
+
+        <span class="md-caption" layout="column" flex>{{menuItem.name}}</span>
+    </md-button>
+</div>

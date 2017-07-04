@@ -1,0 +1,31 @@
+<div id="side_menu"
+     layout="row" layout-align="center center" layout-padding flex>
+
+    <!--TODO: show parent state-->
+
+    <!--<div class="current-state"-->
+         <!--layout="column" layout-align="center center">-->
+
+        <!--<md-button-->
+                <!--ng-if="vm.isChildState(vm.state)"-->
+                <!--ui-sref="{{vm.parentState(vm.parentState(vm.state))}}"-->
+                <!--class="md-default"-->
+                <!--layout="row"-->
+                <!--layout-align="center center">-->
+
+            <!--<ng-md-icon icon="arrow_back" size="18" style="fill: rgb(3,169,244)"></ng-md-icon>-->
+
+            <!--<span class="side-menu-back">Back</span>-->
+        <!--</md-button>-->
+    <!--</div>-->
+
+    <md-button class="md-button side-menu-view"
+               ng-class="{'md-raised': vm.isStateActive(menuItem.state, 'side-menu')}"
+               ng-disabled="vm.isStateActive(menuItem.state, 'side-menu')"
+               ng-repeat="menuItem in vm.side_menu"
+               ui-sref="{{menuItem.state}}"
+               layout="row">
+
+        <span class="md-caption">{{menuItem.name}}</span>
+    </md-button>
+</div>

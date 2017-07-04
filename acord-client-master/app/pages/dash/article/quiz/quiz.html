@@ -1,0 +1,19 @@
+<md-content id="quiz" class="transparent"
+            layout="column" layout-align="center stretch" layout-margin layout-fill>
+
+    <div ng-repeat="question in vm.article.quiz"
+         layout="column" layout-align="center center">
+
+        <span class="md-title weight-500">Q: {{question.questionText}}</span>
+
+        <md-radio-group ng-model="question.answer">
+
+            <md-radio-button class="md-primary"
+                             ng-repeat="answer in question.answers"
+                             ng-value="{{$index}}"
+                             layout="row" layout-align="start center" layout-margin>
+                <span class="md-subhead weight-300">{{answer.textAnswer}}</span>
+            </md-radio-button>
+        </md-radio-group>
+    </div>
+</md-content>

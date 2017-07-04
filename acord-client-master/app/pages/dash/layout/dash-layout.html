@@ -1,0 +1,44 @@
+<!--TODO: create mobile layout-->
+
+<div id="dash" layout="column" layout-fill>
+
+    <!--HEADER-->
+    <md-toolbar id="dashHeader"
+                md-whiteframe="6"
+                layout-align="start center" layout="row" flex="5">
+        <span flex="5"></span>
+        <main-menu layout="row" layout-align="start center"></main-menu>
+        <action-menu layout="row" layout-align="end center" flex></action-menu>
+    </md-toolbar>
+
+    <md-content class="transparent" layout="row" flex>
+
+        <span flex="5"></span>
+
+        <!--Views-->
+        <ui-view id="dashViews" flex></ui-view>
+
+        <!--EVENTS, RANKINGS-->
+        <md-sidenav id="side-notes"
+                    class="md-sidenav-right"
+                    md-component-id="right"
+                    md-is-locked-open="$mdMedia('gt-xs')"
+                    md-whiteframe="1"
+                    layout="column" layout-align="start center" flex="10">
+
+            <!--next event-->
+            <next-event class="next-event-wrapper" layout="row" flex="20"></next-event>
+
+            <!--top rated-->
+            <ranking class="ranking-wrapper"
+                     rank-type="ratings"
+                     layout="row" flex="40"></ranking>
+
+            <!--top contributors-->
+            <ranking class="ranking-wrapper"
+                     rank-type="contributors"
+                     layout="row" flex="40"></ranking>
+
+        </md-sidenav>
+</div>
+</div>

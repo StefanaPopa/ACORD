@@ -1,0 +1,103 @@
+<div id="publish" ng-cloak
+     layout="column" flex>
+
+    <div layout="row">
+
+        <span class="md-display-1 weight-300">
+            Publish
+        </span>
+
+        <span flex></span>
+
+        <!--<div layout="column" layout-align="center center">-->
+            <!--<md-button class="md-primary md-raised"-->
+                       <!--ng-show="vm.article.type === 'Lesson'"-->
+                       <!--layout="row"  layout-align="space-around">-->
+                <!--<ng-md-icon icon="add" size="24" style="fill: white"-->
+                            <!--layout="row" layout-align="center center"></ng-md-icon>-->
+                <!--<span>Add Quiz</span>-->
+            <!--</md-button>-->
+        <!--</div>-->
+
+        <div class="article-actions"
+             layout="row" layout-align="center center" layout-margin>
+            <md-button class="md-icon-button md-raised md-accent"
+                       ng-click="vm.publishArticle()">
+                <ng-md-icon icon="check" size="24" style="fill: white"></ng-md-icon>
+                <md-tooltip md-direction="bottom" md-delay="300">Done</md-tooltip>
+            </md-button>
+        </div>
+    </div>
+
+    <md-content class="transparent"
+                layout="column" layout-align="start center" flex>
+
+        <div class="article-form" layout="row" layout-padding>
+
+            <!--Type-->
+            <md-input-container>
+                <label>Type</label>
+                <md-select ng-model="vm.article.type">
+                    <md-option ng-repeat="type in vm.articleTypes"
+                               ng-value="type">
+                        {{type}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <!--visibility-->
+            <md-input-container>
+                <label>Visibility</label>
+                <md-select ng-model="vm.article.privacy">
+                    <md-option ng-repeat="visibility in vm.visibility"
+                               ng-value="visibility">
+                        {{visibility}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <!--category-->
+            <md-input-container>
+                <label>Category</label>
+                <md-select ng-model="vm.article.category">
+                    <md-option ng-repeat="category in vm.articleCategories"
+                               ng-value="category">
+                        {{category}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <!--title-->
+            <md-input-container md-no-float
+                                layout="row" layout-align="center end" flex>
+                <input class="article-title"
+                       ng-model="vm.article.title"
+                       md-select-on-focus placeholder="Title">
+            </md-input-container>
+        </div>
+
+        <!--tags-->
+        <md-chips class="article-tags" ng-model="vm.selectedTags"
+                  md-autocomplete-snap="true"
+                  md-transform-chip="vm.transformChip($chip)"
+                  md-require-match="vm.autocompleteRequireMatch"
+                  layout="row" layout-align="start center">
+
+            <md-autocomplete md-search-text="vm.searchText"
+                             md-items="item in vm.querySearch(vm.searchText)"
+                             md-item-text="item" placeholder="Add a tag">
+                <span md-highlight-text="vm.searchText">{{item}}</span>
+            </md-autocomplete>
+
+            <md-chip-template>
+                <span class="weight-300 md-subhead">{{$chip}}</span>
+            </md-chip-template>
+        </md-chips>
+
+        <editor></editor>
+
+        <quiz-editor quiz="vm.article.quiz"
+                     ng-if="vm.article.type === 'Lesson'">
+        </quiz-editor>
+    </md-content>
+</div>

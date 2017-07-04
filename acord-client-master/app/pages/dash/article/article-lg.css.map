@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW;EACT,OAAO,EAAE,UAAU;EACnB,MAAM,EAAE,IAAI;;AAEd,gCAAgC;EAC9B,MAAM,EAAE,gBAAgB;EACxB,gBAAgB,EAAE,OAAO;EACzB,OAAO,EAAE,QAAQ;EACjB,aAAa,EAAE,IAAI;EACnB,KAAK,EAAE,OAAO",
+"sources": ["article-lg.sass"],
+"names": [],
+"file": "article-lg.css"
+}

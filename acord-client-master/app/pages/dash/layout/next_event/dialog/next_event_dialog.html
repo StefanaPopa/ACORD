@@ -1,0 +1,22 @@
+<form id="next-event-dialog-wrapper" ng-cloak layout="column" flex>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Next Event: {{vm.next_event.name}}</h2>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <!--TODO: event directive-->
+            <p>Location: {{vm.next_event.location}}</p>
+            <p>Time: {{vm.next_event.time}}</p>
+            <p>Details: {{vm.next_event.details}}</p>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button ng-click="vm.answer('close')">
+            <span>Close</span>
+        </md-button>
+    </md-dialog-actions>
+</form>

@@ -1,0 +1,17 @@
+{
+  "next_event": {
+    "name": "Impromptu Debate",
+    "location": "C.N. \"E. Racovita\", P2",
+    "time": 1505000000000,
+    "details": [
+      {
+        "title": "Motion",
+        "content": "AP ar crea un Debate app."
+      },
+      {
+        "title": "Participants",
+        "content": "Ionica, Popica"
+      }
+    ]
+  }
+}

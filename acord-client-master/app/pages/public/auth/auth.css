@@ -1,0 +1,10 @@
+#auth {
+  min-width: 400px;
+  min-height: 400px;
+  position: absolute;
+  background-color: white; }
+
+#auth md-input-container {
+  position: relative; }
+
+/*# sourceMappingURL=auth.css.map */

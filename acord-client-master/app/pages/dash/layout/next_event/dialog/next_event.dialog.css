@@ -1,0 +1,13 @@
+#ranking-dialog-wrapper {
+    min-width: 40%;
+}
+
+#ranking-dialog {
+    padding: 5px;
+}
+
+#ranking-dialog > table {
+    width: 100%;
+}
+
+/*# sourceMappingURL=next_event.dialog.css.map */

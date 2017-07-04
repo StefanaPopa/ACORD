@@ -1,0 +1,22 @@
+{
+  "notifications": [
+    {
+      "name": "Notification 1",
+      "icon": {
+        "type": "school"
+      }
+    },
+    {
+      "name": "Notification 2",
+      "icon": {
+        "type": "date_range"
+      }
+    },
+    {
+      "name": "Notification 3",
+      "icon": {
+        "type": "feedback"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/acord-server-master/acord.iml" filepath="$PROJECT_DIR$/acord-server-master/acord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acord-client-master/acord-client-master.iml" filepath="$PROJECT_DIR$/acord-client-master/acord-client-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acord-server-master/domain/domain.iml" filepath="$PROJECT_DIR$/acord-server-master/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acord-server-master/persistence/persistence.iml" filepath="$PROJECT_DIR$/acord-server-master/persistence/persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acord-server-master/services/services.iml" filepath="$PROJECT_DIR$/acord-server-master/services/services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acord-server-master/web/web.iml" filepath="$PROJECT_DIR$/acord-server-master/web/web.iml" />
+    </modules>
+  </component>
+</project>
